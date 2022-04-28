@@ -1,0 +1,25 @@
+const colores = ['rosa', 'verde', 'amarillo', 'morado'];
+
+const medidas = ['5', '6', '9', '7', '4.4']
+
+let oi = colores.reduce((acc, prev) => {
+    return [
+        ...acc,
+        medidas.reduce((ac, pr) => {
+            return [
+                ...ac,
+                `${prev}-${pr}`
+            ]
+        }, [])
+   ]
+}, [[]])
+const oiAux = [...oi]
+oiAux.shift()
+
+for (const oia of oiAux) {
+    
+    for (const oi of oia) {
+        let con = oi.split('-')
+        console.log(`color: ${con[0]} - medida: ${con[1]}`, con);
+    } 
+}
