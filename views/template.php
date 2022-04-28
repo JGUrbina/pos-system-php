@@ -114,7 +114,7 @@
                 *             Contents
                 * ======================================**/
 
-                
+                var_dump('-------> ', $_GET["ruta"]);
                 if(isset($_GET["ruta"])) { 
 
                     isset($white_list_pages[$_GET["ruta"]]) ? 
