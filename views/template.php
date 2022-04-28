@@ -95,7 +95,7 @@
          * ======================================**/ 
         include 'utils/constants.php';
     
-         if(isset($_SESSION['log-in']) && $_SESSION['log-in'] === 'OK') {
+         //if(isset($_SESSION['log-in']) && $_SESSION['log-in'] === 'OK') {
              
             echo '<div class="wrapper">';
                 
@@ -132,9 +132,9 @@
                 * ======================================**/
                 include "components/global/footer.php";
             echo '</div>';
-         } else {
-            include "pages/login.php";
-         }
+         //} else {
+           // include "pages/login.php";
+         //}
             
         ?>
 
