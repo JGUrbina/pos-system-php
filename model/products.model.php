@@ -74,23 +74,23 @@ require_once("conexion.php");
 
             //$stmt = Conexion::connect()->prepare("UPDATE $table SET id = :id WHERE id = :id");
             $stmt = Conexion::connect()->prepare("UPDATE $table SET name = :name, code = :code, sku = :sku, description = :description, id_category = :id_category, stock = :stock, purchase_price = :purchase_price, sale_price = :sale_price, porcentaje = :porcentaje, image = :image, sales = :sales, have_porsentaje = :have_porsentaje WHERE code = :code");
-
+                   
             
              
-             $stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		     $stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
-             $stmt->bindParam(":sku", $data["sku"], PDO::PARAM_STR);
-		     $stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
-		     $stmt->bindParam(":id_category", $data["id_category"], PDO::PARAM_INT);
-		     $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
-		     $stmt->bindParam(":purchase_price", $data["purchase_price"], PDO::PARAM_STR);
-		     $stmt->bindParam(":sale_price", $data["sale_price"], PDO::PARAM_STR);
-             $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
-		     $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
-             $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
-             $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
+            //  $stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
+            //  $stmt->bindParam(":sku", $data["sku"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":id_category", $data["id_category"], PDO::PARAM_INT);
+		    //  $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":purchase_price", $data["purchase_price"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":sale_price", $data["sale_price"], PDO::PARAM_STR);
+            //  $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
+		    //  $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
+            //  $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
+            //  $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
 
-             if($stmt->execute()) {return 'OK';}
+            //  if($stmt->execute()) {return 'OK';}
              return 'ERROR';
 
             $stmt -> close();
