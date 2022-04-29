@@ -142,7 +142,8 @@ $('#porcentajeCheck').on('ifUnchecked', function () {
     $('#sale_price').prop('readonly', false);
 
     $('#inputPorcentaje').hide();
-     $('#porcentaje').val(0);
+    $('#porcentaje').val(0);
+     $('#checked').val(0);
     
 });
 
@@ -151,6 +152,7 @@ $('#porcentajeCheck').on('ifChecked', function () {
 
     $('#sale_price').prop('readonly', true);
     $('#inputPorcentaje').show();
+     $('#checked').val(1);
 
 
     

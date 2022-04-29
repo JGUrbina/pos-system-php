@@ -48,6 +48,7 @@ class ProductsController {
             $purchase_price = $_POST['purchase_price'];
             $sale_price = $_POST['sale_price'];
             $porcentaje =  $_POST['porcentaje'];
+            $have_porsentaje = $_POST['checked'];
             
             $product_data = Array(
                                 'name' => $name,
@@ -60,18 +61,19 @@ class ProductsController {
                                 'sale_price' => $sale_price,
                                 'porcentaje' => $porcentaje,
                                 'image' => $img_directory,
-                                'sales' => '0'
+                                'sales' => '0',
+                                'have_porsentaje' => $have_porsentaje
                                 
                               );
 
-                             
+                             var_dump($product_data);
             $table = 'products';
 
             $response = productsModel::MdlRegisterProduct($table, $product_data);
 
            
             
-            if($response === 'OK') { echo $product_register_success;  return;}
+           // if($response === 'OK') { echo $product_register_success;  return;}
         } 
     }
 

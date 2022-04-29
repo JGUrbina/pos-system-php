@@ -148,6 +148,7 @@
 
                 <img src="views/assets/img/products/default/anonymous.png" class="img-thumbnail preview" width="100px"
                     alt="product image" />
+                <input type="hidden" id="checked" name="checked" value="0" />
             </div>
 
         </div>
