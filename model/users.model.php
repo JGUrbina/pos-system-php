@@ -2,12 +2,7 @@
    
 require_once("conexion.php");
 
-function queryOrDie($query)
-{
-    $query = mysql_query($query);
-    if (! $query) exit(mysql_error());
-    return $query;
-}
+
 
     class UsersModel {
         /**======================================
@@ -53,7 +48,7 @@ function queryOrDie($query)
             $stmt -> bindParam(':perfil_img', $data['perfil_img'], PDO::PARAM_STR);
            
             if($stmt->execute()) {return 'OK';}
-            return queryOrDie($stmt);
+            return $stmt;
 
             $stmt -> close();
             $stmt = null;
