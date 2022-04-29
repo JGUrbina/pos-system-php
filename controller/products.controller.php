@@ -101,8 +101,37 @@ class ProductsController {
 	static public function productUpdateCtr(){
 
         include 'utils/constants.php';
+
+            $id = $_POST['edit-id'];
+			$name = $_POST['edit-name-product'];
+            $code = $_POST['edit-code'];
+            $sku = $_POST['edit-sku'];
+            $description = $_POST['edit-description'];
+            $category = $_POST['edit-category'];
+            $stock = $_POST['edit-stock'];
+            $purchase_price = $_POST['edit-purchase_price'];
+            $sale_price = $_POST['edit-sale_price'];
+            $porcentaje =  $_POST['edit-porcentaje'];
+            $sales = $_POST['edit-sales'];
+            $have_porsentaje = $_POST["edit-checked"];
+            
+            $product_data = Array(
+                                'id' => $id,
+                                'name' => $name,
+                                'code' => $code,
+                                'sku' => $sku,
+                                'description' => $description,
+                                'id_category' => $category,
+                                'stock' => $stock,
+                                'purchase_price' => $purchase_price,
+                                'sale_price' => $sale_price,
+                                'porcentaje' => $porcentaje,
+                                'image' => $img_directory,
+                                'sales' => $sales,
+                                'have_porsentaje' => $have_porsentaje
+                              );
         
-        echo 'hola';
+        var_dump($product_data);
 		// if(isset($_POST["edit-name-product"])){
 
         //     // if(!preg_match($RegExNumber , $_POST['stock'])) { echo  $anyNumbers;return; }
