@@ -161,9 +161,9 @@ class ProductsController {
 
             $table = 'products';
 
-        //$response = productsModel::MdlUpdateProduct($table, $product_data);
+        $response = productsModel::MdlUpdateProduct($table, $product_data);
 
-           var_dump($product_data);
+           var_dump($response);
             
           // if($response === 'OK') { echo $product_edit_success; return;} 
 
