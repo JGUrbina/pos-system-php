@@ -73,7 +73,7 @@ class ProductsController {
 
            
             
-           // if($response === 'OK') { echo $product_register_success;  return;}
+           if($response === 'OK') { echo $product_register_success;  return;}
         } 
     }
 
