@@ -93,7 +93,7 @@ class UsersController {
         include 'utils/constants.php';
         include 'utils/extents_functions.php';
 
-        var_dump($_POST['name']);
+        var_dump(isset($_POST['name']),  isset($_POST['username']), isset($_POST['password']));
         if(isset($_POST['name']) &&
            isset($_POST['username']) && 
            isset($_POST['password']))
@@ -138,7 +138,7 @@ class UsersController {
                                 'perfil_img' => $img_directory
                               );
             $table = 'users';
-
+var_dump($user_data);
             $response = UsersModel::MdlRegisterUser($table, $user_data);
             
             if($response === 'OK') { echo $user_register_success; return;}
