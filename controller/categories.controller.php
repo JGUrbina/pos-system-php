@@ -43,7 +43,7 @@ class CategoriesController {
             $category = $_POST['edit_category'];
             $id = $_POST['id_category'];
                
-            if(!preg_match($RegExLatin, $_POST['edit_category'])) { echo $not_special_symbol;return; }
+            //if(!preg_match($RegExLatin, $_POST['edit_category'])) { echo $not_special_symbol;return; }
                 
             $table = 'categories';
             $user_data = Array(
