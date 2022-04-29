@@ -17,7 +17,7 @@
                     require_once 'controller/products.controller.php';
 
                     $product_update = new ProductsController();
-                    //var_dump($product_update -> productUpdateCtr());
+                    var_dump($product_update -> productUpdateCtr());
                     $product_update -> productUpdateCtr();
                 ?>
                 <div class="modal-footer">
