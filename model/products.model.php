@@ -77,18 +77,18 @@ require_once("conexion.php");
                    
             
              
-            //  $stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
-            //  $stmt->bindParam(":sku", $data["sku"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":id_category", $data["id_category"], PDO::PARAM_INT);
-		    //  $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":purchase_price", $data["purchase_price"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":sale_price", $data["sale_price"], PDO::PARAM_STR);
-            //  $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
-		    //  $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
-            //  $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
-            //  $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
+            $stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
+		    $stmt->bindParam(":code", $data["code"], PDO::PARAM_STR);
+            $stmt->bindParam(":sku", $data["sku"], PDO::PARAM_STR);
+		    $stmt->bindParam(":description", $data["description"], PDO::PARAM_STR);
+		    $stmt->bindParam(":id_category", $data["id_category"], PDO::PARAM_INT);
+		    $stmt->bindParam(":stock", $data["stock"], PDO::PARAM_STR);
+		    $stmt->bindParam(":purchase_price", $data["purchase_price"], PDO::PARAM_STR);
+		    $stmt->bindParam(":sale_price", $data["sale_price"], PDO::PARAM_STR);
+            $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
+		    $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
+            $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
+            $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
 
             //  if($stmt->execute()) {return 'OK';}
            
