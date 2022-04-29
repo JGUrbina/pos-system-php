@@ -65,8 +65,6 @@ class ProductsController {
                                 'have_porsentaje' => $have_porsentaje
                                 
                               );
-
-                             var_dump($product_data);
             $table = 'products';
 
             $response = productsModel::MdlRegisterProduct($table, $product_data);
@@ -167,7 +165,7 @@ class ProductsController {
 
             var_dump($_POST["edit-checked"]);
             
-           //if($response === 'OK') { echo $product_edit_success; return;} 
+           if($response === 'OK') { echo $product_edit_success; return;} 
 
 
 			
