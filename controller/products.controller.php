@@ -102,74 +102,74 @@ class ProductsController {
 
         include 'utils/constants.php';
         
-        
-		if(isset($_POST["edit-description"])){
+        echo 'hola';
+		// if(isset($_POST["edit-name-product"])){
 
-            // if(!preg_match($RegExNumber , $_POST['stock'])) { echo  $anyNumbers;return; }
-            // if(!preg_match($RegExNumber , $_POST['purchase_price'])) { echo  $anyNumbers;return; }
-            // if(!preg_match($RegExNumber, $_POST['sale_price'])) { echo  $anyNumbers;return; }
+        //     // if(!preg_match($RegExNumber , $_POST['stock'])) { echo  $anyNumbers;return; }
+        //     // if(!preg_match($RegExNumber , $_POST['purchase_price'])) { echo  $anyNumbers;return; }
+        //     // if(!preg_match($RegExNumber, $_POST['sale_price'])) { echo  $anyNumbers;return; }
 
 			
 
-		   		/*=============================================
-				VALIDAR IMAGEN
-				=============================================*/
-            $img = $_FILES['edit-product_img'];
-            $img_directory = $_POST['actual_product_img'];
+		//    		/*=============================================
+		// 		VALIDAR IMAGEN
+		// 		=============================================*/
+        //     $img = $_FILES['edit-product_img'];
+        //     $img_directory = $_POST['actual_product_img'];
                 
-            if($img['tmp_name'] && !empty($img['tmp_name'])) {
+        //     if($img['tmp_name'] && !empty($img['tmp_name'])) {
 
-                $new_width = 500;
-                $new_height = 500;
+        //         $new_width = 500;
+        //         $new_height = 500;
 
-                $directory = 'views/assets/img/products/'.str_replace(" ", "", $_POST['name-product']).'-'.$_POST['code'];
+        //         $directory = 'views/assets/img/products/'.str_replace(" ", "", $_POST['name-product']).'-'.$_POST['code'];
 
 
-                $img_directory = imgSave($img, '', $new_width, $new_height, $directory);
-            }
+        //         $img_directory = imgSave($img, '', $new_width, $new_height, $directory);
+        //     }
 			   	
-            $id = $_POST['edit-id'];
-			$name = $_POST['edit-name-product'];
-            $code = $_POST['edit-code'];
-            $sku = $_POST['edit-sku'];
-            $description = $_POST['edit-description'];
-            $category = $_POST['edit-category'];
-            $stock = $_POST['edit-stock'];
-            $purchase_price = $_POST['edit-purchase_price'];
-            $sale_price = $_POST['edit-sale_price'];
-            $porcentaje =  $_POST['edit-porcentaje'];
-            $sales = $_POST['edit-sales'];
-            $have_porsentaje = $_POST["edit-checked"];
+        //     $id = $_POST['edit-id'];
+		// 	$name = $_POST['edit-name-product'];
+        //     $code = $_POST['edit-code'];
+        //     $sku = $_POST['edit-sku'];
+        //     $description = $_POST['edit-description'];
+        //     $category = $_POST['edit-category'];
+        //     $stock = $_POST['edit-stock'];
+        //     $purchase_price = $_POST['edit-purchase_price'];
+        //     $sale_price = $_POST['edit-sale_price'];
+        //     $porcentaje =  $_POST['edit-porcentaje'];
+        //     $sales = $_POST['edit-sales'];
+        //     $have_porsentaje = $_POST["edit-checked"];
             
-            $product_data = Array(
-                                'id' => $id,
-                                'name' => $name,
-                                'code' => $code,
-                                'sku' => $sku,
-                                'description' => $description,
-                                'id_category' => $category,
-                                'stock' => $stock,
-                                'purchase_price' => $purchase_price,
-                                'sale_price' => $sale_price,
-                                'porcentaje' => $porcentaje,
-                                'image' => $img_directory,
-                                'sales' => $sales,
-                                'have_porsentaje' => $have_porsentaje
-                              );
+        //     $product_data = Array(
+        //                         'id' => $id,
+        //                         'name' => $name,
+        //                         'code' => $code,
+        //                         'sku' => $sku,
+        //                         'description' => $description,
+        //                         'id_category' => $category,
+        //                         'stock' => $stock,
+        //                         'purchase_price' => $purchase_price,
+        //                         'sale_price' => $sale_price,
+        //                         'porcentaje' => $porcentaje,
+        //                         'image' => $img_directory,
+        //                         'sales' => $sales,
+        //                         'have_porsentaje' => $have_porsentaje
+        //                       );
 
             
 
-            $table = 'products';
+        //     $table = 'products';
 
-           $response = productsModel::MdlUpdateProduct($table, $product_data);
+        //    $response = productsModel::MdlUpdateProduct($table, $product_data);
 
-            var_dump($_POST["edit-checked"]);
+        //     var_dump($_POST["edit-checked"]);
             
-           if($response === 'OK') { echo $product_edit_success; return;} 
+        //    if($response === 'OK') { echo $product_edit_success; return;} 
 
 
 			
-		}
+		// }
 
 	}
 
