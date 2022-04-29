@@ -41,7 +41,7 @@ require_once("conexion.php");
             $stmt -> bindParam(':password', $data['password'], PDO::PARAM_STR);
             $stmt -> bindParam(':rol', $data['rol'], PDO::PARAM_STR);
             $stmt -> bindParam(':perfil_img', $data['perfil_img'], PDO::PARAM_STR);
-            var_dump($stmt);
+           
             if($stmt->execute()) {return 'OK';}
             return ['ERROR', $stmt->execute()];
 
