@@ -91,7 +91,7 @@ require_once("conexion.php");
             //  $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
 
             //  if($stmt->execute()) {return 'OK';}
-            var
+           
              return ['ERROR', $stmt];
 
             $stmt -> close();
