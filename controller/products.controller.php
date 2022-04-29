@@ -49,7 +49,7 @@ class ProductsController {
             $sale_price = $_POST['sale_price'];
             $porcentaje =  $_POST['porcentaje'];
             $have_porsentaje = $_POST['checked'];
-            
+            //new change
             $product_data = Array(
                                 'name' => $name,
                                 'code' => $code,
