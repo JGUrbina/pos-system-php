@@ -138,7 +138,6 @@ $('#porcentaje').change(function () {
 $('#porcentajeCheck').on('ifUnchecked', function () {
     //sale price y el valor de purchase price
    
-   
     $('#sale_price').prop('readonly', false);
 
     $('#inputPorcentaje').hide();
