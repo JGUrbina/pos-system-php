@@ -90,9 +90,9 @@ require_once("conexion.php");
             $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
             $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_INT);
 
-            //  if($stmt->execute()) {return 'OK';}
+           if($stmt->execute()) {return 'OK';}
            
-             return ['ERROR', $stmt, $stmt->execute()];
+             return 'ERROR';
 
             $stmt -> close();
             $stmt = null;
