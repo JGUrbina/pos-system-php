@@ -92,6 +92,8 @@ class UsersController {
     static public function userRegisterCtr() {
         include 'utils/constants.php';
         include 'utils/extents_functions.php';
+
+        
         if(isset($_POST['name']) &&
            isset($_POST['username']) && 
            isset($_POST['password']))
