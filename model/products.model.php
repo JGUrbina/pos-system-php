@@ -34,7 +34,7 @@ require_once("conexion.php");
          *             User Register
          * ======================================**/ 
         static function MdlRegisterProduct($table, $data) {
-            $stmt = Conexion::connect()->prepare("INSERT INTO $table(name, code, sku, description, id_category, stock, purchase_price, sale_price, porcentaje, image, sales) VALUES (:name, :code, :sku, :description, :id_category, :stock, :purchase_price, :sale_price, :porcentaje, :image, :sales)");
+            $stmt = Conexion::connect()->prepare("INSERT INTO $table(name, code, sku, description, id_category, stock, purchase_price, sale_price, porcentaje, image, sales, have_porsentaje) VALUES (:name, :code, :sku, :description, :id_category, :stock, :purchase_price, :sale_price, :porcentaje, :image, :sales, :have_porsentaje)");
 
             
 		$stmt->bindParam(":name", $data["name"], PDO::PARAM_STR);
@@ -48,6 +48,7 @@ require_once("conexion.php");
         $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
 		$stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
         $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
+        $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
 		
 
 		if($stmt->execute()){
