@@ -165,7 +165,7 @@ class ProductsController {
 
            var_dump($response);
             
-          // if($response === 'OK') { echo $product_edit_success; return;} 
+         if($response === 'OK') { echo $product_edit_success; return;} 
 
 
 			
