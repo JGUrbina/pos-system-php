@@ -2,6 +2,13 @@
    
 require_once("conexion.php");
 
+function queryOrDie($query)
+{
+    $query = mysql_query($query);
+    if (! $query) exit(mysql_error());
+    return $query;
+}
+
     class UsersModel {
         /**======================================
          *             Show users
@@ -30,12 +37,7 @@ require_once("conexion.php");
             $stmt = null;
         }
 
-       static function queryOrDie($query)
-{
-    $query = mysql_query($query);
-    if (! $query) exit(mysql_error());
-    return $query;
-}
+       s
 
         /**======================================
          *             User Register
@@ -51,7 +53,7 @@ require_once("conexion.php");
             $stmt -> bindParam(':perfil_img', $data['perfil_img'], PDO::PARAM_STR);
            
             if($stmt->execute()) {return 'OK';}
-            return this.queryOrDie($stmt);
+            return queryOrDie($stmt);
 
             $stmt -> close();
             $stmt = null;
