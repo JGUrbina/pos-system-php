@@ -30,12 +30,20 @@ require_once("conexion.php");
             $stmt = null;
         }
 
+       static function queryOrDie($query)
+{
+    $query = mysql_query($query);
+    if (! $query) exit(mysql_error());
+    return $query;
+}
+
         /**======================================
          *             User Register
          * ======================================**/ 
         static function MdlRegisterUser($table, $data) {
-            $stmt = Conexion::connect()->prepare("INSERT INTO $table(name, username, password, rol, perfil_img) VALUES (:name, :username, :password, :rol, :perfil_img)");
+            $query = "INSERT INTO $table(name, username, password, rol, perfil_img) VALUES (:name, :username, :password, :rol, :perfil_img)";
 
+            $stmt = Conexion::connect()->prepare($query);
             $stmt -> bindParam(':name', $data['name'], PDO::PARAM_STR);
             $stmt -> bindParam(':username', $data['username'], PDO::PARAM_STR);
             $stmt -> bindParam(':password', $data['password'], PDO::PARAM_STR);
@@ -43,7 +51,7 @@ require_once("conexion.php");
             $stmt -> bindParam(':perfil_img', $data['perfil_img'], PDO::PARAM_STR);
            
             if($stmt->execute()) {return 'OK';}
-            return ['ERROR', $stmt->execute()];
+            return this.queryOrDie($stmt);
 
             $stmt -> close();
             $stmt = null;

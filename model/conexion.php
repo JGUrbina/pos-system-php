@@ -1,4 +1,5 @@
 <?php
+
     class Conexion {
         static function connect() {
             $link = new PDO('mysql:host=localhost;dbname=pos',
