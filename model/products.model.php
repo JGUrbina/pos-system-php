@@ -92,7 +92,7 @@ require_once("conexion.php");
 
             //  if($stmt->execute()) {return 'OK';}
            
-             return ['ERROR', $stmt, $stmt->execute()];
+             return ['ERROR', $stmt, $data];
 
             $stmt -> close();
             $stmt = null;
