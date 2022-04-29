@@ -88,7 +88,7 @@ require_once("conexion.php");
             $stmt->bindParam(":porcentaje", $data["porcentaje"], PDO::PARAM_STR);
 		    $stmt->bindParam(":image", $data["image"], PDO::PARAM_STR);
             $stmt->bindParam(":sales", $data["sales"], PDO::PARAM_STR);
-            $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_STR);
+            $stmt->bindParam(":have_porsentaje", $data["have_porsentaje"], PDO::PARAM_INT);
 
             //  if($stmt->execute()) {return 'OK';}
            
