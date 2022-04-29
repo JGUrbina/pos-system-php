@@ -160,7 +160,7 @@ class UsersController {
                 $password = $_POST['edit_password'];
                 $rol = $_POST['edit_rol'];
 
-                if(!preg_match($RegExLatin, $_POST['edit_name'])) { echo $not_special_symbol;return; }
+                //if(!preg_match($RegExLatin, $_POST['edit_name'])) { echo $not_special_symbol;return; }
                 //if(!preg_match($RegEx, $_POST['username']))  { echo $not_special_symbol_username; return; }
                 //if(!preg_match($RegExPassword, $_POST['password']))  echo $password_error return;
 
