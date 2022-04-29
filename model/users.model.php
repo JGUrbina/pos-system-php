@@ -37,7 +37,7 @@ function queryOrDie($query)
             $stmt = null;
         }
 
-       s
+       
 
         /**======================================
          *             User Register
