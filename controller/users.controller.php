@@ -93,7 +93,7 @@ class UsersController {
         include 'utils/constants.php';
         include 'utils/extents_functions.php';
 
-        
+        var_dump($_POST['name']);
         if(isset($_POST['name']) &&
            isset($_POST['username']) && 
            isset($_POST['password']))
