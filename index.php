@@ -15,6 +15,7 @@ ini_set("xdebug.var_display_max_depth", -1);
 require_once 'controller/users.controller.php';
 require_once 'controller/categories.controller.php';
 require_once 'controller/products.controller.php';
+require_once 'controller/clients.controller.php';
 require_once 'controller/template.controller.php';
 
 
@@ -25,6 +26,7 @@ require_once 'controller/template.controller.php';
 require_once 'model/users.model.php';
 require_once 'model/categories.model.php';
 require_once 'model/products.model.php';
+require_once 'model/clients.model.php';
 require_once 'model/template.model.php';
 
 

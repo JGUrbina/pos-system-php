@@ -2,12 +2,11 @@
     <div class="box-body">
         <div class="form-group">
             <div class="input-group">
-                <label for="name-client" class="input-group-addon">
+                <label for="name" class="input-group-addon">
                     <i class="fa fa-user"></i>
                 </label>
 
-                <input type="text" class="form-control input-lg" name="name-client" placeholder="name" id="name-client"
-                    required />
+                <input type="text" class="form-control input-lg" name="name" placeholder="name" id="name" required />
             </div>
         </div>
 
@@ -19,6 +18,18 @@
                 </label>
 
                 <input type="email" class="form-control input-lg" name="email" placeholder="Email" id="email"
+                    autocomplete="off" />
+            </div>
+        </div>
+
+        <!-- Document -->
+        <div class="form-group">
+            <div class="input-group">
+                <label for="document" class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                </label>
+
+                <input type="text" class="form-control input-lg" name="document" placeholder="Document" id="document"
                     autocomplete="off" />
             </div>
         </div>
@@ -44,7 +55,7 @@
                 </label>
 
                 <input type="text" class="form-control input-lg" name="direction" placeholder="Direction" id="direction"
-                    autocomplete="off" required />
+                    autocomplete="off" />
             </div>
         </div>
 

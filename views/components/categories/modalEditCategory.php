@@ -11,7 +11,7 @@
 
                 include 'components/modalBody-edit.php';
 
-                require_once 'controller/users.controller.php';
+                require_once 'controller/categories.controller.php';
 
                     $categoryUpdate = new CategoriesController();
                     $categoryUpdate -> categoryUpdateCtr();

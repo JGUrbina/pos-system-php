@@ -37,7 +37,7 @@ class UsersController {
                    
                     if($response['username'] === $_POST['username'] && 
                        $response['password'] === $password_encripted) {
-                       setcookie("TestCookie", $value, time()+3600);
+                       
                         if(!$response['state']) { echo $disabled_account; return;}
                      
                         $_SESSION['log-in'] = 'OK';

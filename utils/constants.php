@@ -197,7 +197,7 @@ $product_edit_success = "
                 </script>
                 ";
 
- $anyNumbers = "
+$anyNumbers = "
                 <script>
                     Swal.fire({
                             icon: 'error',
@@ -207,6 +207,38 @@ $product_edit_success = "
                         }).then(result => {
                             if(result.value) {
                                 window.location = 'products';
+                            }
+                        })
+                </script>
+                ";
+
+/**======================================
+ *      Alerts clients
+ * ======================================**/
+
+$client_register_success = "
+                <script>
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'OK',
+                            text: 'El client fue creado exitosamente!',
+                        }).then(result => {
+                            if(result.value) {
+                                window.location = 'clients';
+                            }
+                        })
+                </script>
+                ";
+
+$client_update_success = "
+                <script>
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'OK',
+                            text: 'El cliente fue editado exitosamente!',
+                        }).then(result => {
+                            if(result.value) {
+                                window.location = 'clients';
                             }
                         })
                 </script>

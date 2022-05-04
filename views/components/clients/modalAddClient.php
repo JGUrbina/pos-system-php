@@ -15,10 +15,10 @@
 
                     include 'components/modalBody.php';
 
-                   // require_once 'controller/products.controller.php';
+                    require_once 'controller/products.controller.php';
 
-                   // $userRegister = new ClientsController();
-                   // $userRegister -> userRegisterCtr();
+                    $clientRegister = new ClientsController();
+                    $clientRegister -> clientRegisterCtr();
 
                 ?>
                 <!-- Modal Footer-->

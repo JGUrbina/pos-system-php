@@ -1,35 +1,46 @@
-<table class="table table-bordered table-striped dt-responsive tablas">
+<table class="table table-bordered table-striped dt-responsive">
     <thead>
         <tr class="text-center">
             <th style="width: 10px;">#</th>
             <th>name</th>
-            <!-- <th>document id</th> -->
+            <th>document id</th>
             <th>email</th>
             <th>telephone</th>
             <th>direction</th>
-            <th>date birth</th>
+            <th>birthday</th>
             <th>total purchases</th>
-            <th>last purchase</th>
             <th>actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Juan Villegas</td>
-            <td>juanvillegas@gmail.com</td>
-            <td>55 555 555 55</td>
-            <td>calle mariño - 27</td>
-            <td>1984-08-16</td>
-            <td>9</td>
-            <td>2022-06-14 12:30:12</td>
-            <td>
-                <div class="btn btn-group">
-                    <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalEditClient"><i
-                            class="fa fa-pencil"></i></button>
-                    <button class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
-                    </di>
-            </td>
-        </tr>
+        <?php 
+            $item = null;
+            $value = null;
+            $clients = ClientsController::clientsShowCtr($item, $value);
+            
+
+            foreach ($clients as $client) {
+                echo '
+                        <tr>
+                            <td>'.$client['id'].'</td>
+                            <td>'.$client['name'].'</td>
+                            <td>'.$client['document'].'</td>
+                            <td>'.$client['email'].'</td>
+                            <td>'.$client['telephone'].'</td>
+                            <td>'.$client['direction'].'</td>
+                            <td>'.$client['birthday'].'</td>
+                            <td>'.$client['sales'].'</td>
+                            
+                            <td>
+                                <div class="btn btn-group">
+                                    <button class="btn btn-warning btn-xs btn-edit-client" data-toggle="modal" data-target="#modalEditClient" id-client="'.$client['id'].'"><i
+                                            class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger btn-xs btn-delete-client" id-client="'.$client['id'].'"><i class="fa fa-times"></i></button>
+                                </di>
+                            </td>
+                        </tr>
+                    ';
+        }
+         ?>
     </tbody>
 </table>

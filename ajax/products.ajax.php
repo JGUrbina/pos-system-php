@@ -80,3 +80,13 @@ if(isset($_POST['delete_id'])) {
      echo $response;
      
  }
+
+if(isset($_POST['delete_id'])) {
+     
+     $validate = new ProductsAjax();
+     $validate -> delete_id = $_POST['delete_id'];
+     $response = $validate -> deleteCategoryAjax();
+
+     echo $response;
+     
+ }
