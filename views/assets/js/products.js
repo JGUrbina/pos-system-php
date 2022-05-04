@@ -454,3 +454,75 @@ $('.edit-product_img').change(function () {
         });
     }
 });
+
+
+/**======================================
+ *            Delete product
+ * ======================================**/
+$("#table-product tbody").on("click", "button.delete-product", function(){
+
+    
+    
+    let id_product = $(this).attr("id-product");
+    let img_product = $(this).attr('img-product');
+    let data = new FormData();
+    data.append('delete_id', id_product);
+    data.append('img_product', img_product);
+
+    
+
+    Swal.fire({
+        title: 'Está seguro de borrar este producto',
+        icon: 'warning',
+        
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText:
+            'Si, eliminar producto',
+        //confirmButtonAriaLabel: 'Thumbs up, great!',
+        cancelButtonText:
+            'Cancelar',
+        //cancelButtonAriaLabel: 'Thumbs down'
+    }).then(function ({isConfirmed}) {
+        if (isConfirmed) {
+            $.ajax({
+                url: 'ajax/products.ajax.php',
+                method: 'POST',
+                data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                typeData: 'json',
+                success: function (response) {
+                    console.log('-----> el response de responses', response);
+                    if (response == 'OK') {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Producto eliminado correctamente!',
+                            showConfirmButton: true,
+                            timer: 700
+                        }).then(function () {
+                            window.location = 'products';
+                        })
+                    } else {
+                        Swal.fire({
+                            //position: 'top-end',
+                            icon: 'error',
+                            title: 'Error al intentar eliminar el producto',
+                            showConfirmButton: true,
+                            timer: 1500
+                        });
+                    }
+                    
+                }
+            });
+        }
+        
+    });
+    
+    
+});

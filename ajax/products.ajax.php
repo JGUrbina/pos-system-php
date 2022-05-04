@@ -31,6 +31,22 @@ class ProductsAjax {
     echo json_encode($response);
 
   }
+
+
+   /**======================================
+    *             Delete Product
+    * ======================================**/
+    public $delete_id;
+    public $delete_img;
+    function deleteProductAjax() {
+         
+        $id = $this->delete_id;
+        $img = $this->delete_img;
+        $response = ProductsController::userDeleteCtr($id, $img);
+        
+        return $response;
+        
+    }
 }
 
 if(isset($_POST['id_category'])) {
@@ -50,3 +66,17 @@ if(isset($_POST['id_product'])) {
     $codeProduct ->editProduct();
 
 }
+
+/**======================================
+ *            Delete product
+ * ======================================**/
+if(isset($_POST['delete_id'])) {
+     
+     $validate = new ProductsAjax();
+     $validate -> delete_id = $_POST['delete_id'];
+     $validate -> delete_img = $_POST['img_product'];
+     $response = $validate -> deleteProductAjax();
+
+     echo $response;
+     
+ }

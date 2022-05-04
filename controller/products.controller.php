@@ -7,7 +7,7 @@ class ProductsController {
 
 
     /**======================================
-    *             User Register
+    *             Product Register
     * ======================================**/
 
     static public function productRegisterCtr() {
@@ -71,7 +71,7 @@ class ProductsController {
 
            
             
-           //if($response === 'OK') { echo $product_register_success;  return;}
+           if($response === 'OK') { echo $product_register_success;  return;}
         } 
     }
 
@@ -80,7 +80,7 @@ class ProductsController {
 
 
     /**======================================
-    *            Users Show
+    *            Products Show
     * ======================================**/
 
     static public function productsShowCtr($item, $value) {
@@ -122,7 +122,7 @@ class ProductsController {
                 $new_width = 500;
                 $new_height = 500;
 
-                $directory = 'views/assets/img/products/'.str_replace(" ", "", $_POST['name-product']).'-'.$_POST['code'];
+                $directory = 'views/assets/img/products/'.str_replace(" ", "", $_POST['edit-name-product']).'-'.$_POST['edit-code'];
 
 
                 $img_directory = imgSave($img, '', $new_width, $new_height, $directory);
@@ -162,8 +162,6 @@ class ProductsController {
             $table = 'products';
 
         $response = productsModel::MdlUpdateProduct($table, $product_data);
-
-           var_dump($response);
             
          if($response === 'OK') { echo $product_edit_success; return;} 
 
@@ -174,22 +172,26 @@ class ProductsController {
 	}
 
     /**======================================
-    *            User delete
+    *            Product delete
     * ======================================**/
 
-    static public function productDeleteCtr($item) {
+    static public function userDeleteCtr($item, $value_img) {
         
         $table = 'products';
-        
-         
+        //imgDelete($value_img, true);
+
+      
+         if($value_img != '') {
+             
+            unlink(dirname(__DIR__, 1).'/'.$value_img);
+            rmdir(dirname(__DIR__, 1). '/'.dirname($value_img, 1) );
+        }
        
         $response = ProductsModel::MdlDeleteProduct($table, $item);
 
-        
-
         if($response == 'OK') {
             
-            return $response;
+            return 'OK';
         } else {
             return 'false';
         }

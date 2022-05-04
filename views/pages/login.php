@@ -26,7 +26,7 @@
             </div>
 
             <?php 
-           // var_dump($_SESSION['log-in']);
+          
                 $login = new UsersController();
 
                 $login -> userLoginCtr();

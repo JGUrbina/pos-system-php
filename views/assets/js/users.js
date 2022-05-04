@@ -171,7 +171,7 @@ $('#new-username').change(function () {
 
 
 /**======================================
- *         No repeat user
+ *         Delete User
  * ======================================**/
 $(document).on('click', '.delete-user', function () {
 

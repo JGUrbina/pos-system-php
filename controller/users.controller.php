@@ -34,7 +34,7 @@ class UsersController {
 
                 $password_encripted = crypt($_POST['password'], '$6$rounds=5000$usesomesillystringforsalt$');
                 
-                   var_dump($response['state']);
+                   
                     if($response['username'] === $_POST['username'] && 
                        $response['password'] === $password_encripted) {
                        setcookie("TestCookie", $value, time()+3600);
@@ -93,7 +93,7 @@ class UsersController {
         include 'utils/constants.php';
         include 'utils/extents_functions.php';
 
-        var_dump($_POST['name'],  $_POST['username'], $_POST['password']);
+       
         if(isset($_POST['name']) &&
            isset($_POST['username']) && 
            isset($_POST['password']))
@@ -140,7 +140,7 @@ class UsersController {
             $table = 'users';
 
             $response = UsersModel::MdlRegisterUser($table, $user_data);
-            var_dump($response);
+           
             if($response === 'OK') { echo $user_register_success; return;}
         } 
     }
@@ -233,7 +233,7 @@ class UsersController {
         //imgDelete($value_img, true);
 
         
-       // var_dump(dirname(__DIR__, 1).'/'.$value_img);
+       
          if($value_img != '') {
             unlink(dirname(__DIR__, 1).'/'.$value_img);
             rmdir(dirname(__DIR__, 1). '/'.dirname($value_img, 1) );
