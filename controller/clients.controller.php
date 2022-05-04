@@ -74,6 +74,7 @@ class ClientsController {
                                 'document' => $document,
                                 'direction' => $direction,
                                 'birthday' => $birthday,
+                                'sales' => 0
                             );
             var_dump('---> name ', $client_data, $birthday);
 
