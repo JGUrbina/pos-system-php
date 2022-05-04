@@ -34,7 +34,7 @@ require_once("conexion.php");
          *             Client Register
          * ======================================**/ 
         static function MdlRegisterClient($table, $data) {
-            $stmt = Conexion::connect()->prepare("INSERT INTO $table(name, email, document, telephone, direction, birthday) VALUES (:name, :email, :document, :telephone, :direction, :birthday)");
+            $stmt = Conexion::connect()->prepare("INSERT INTO $table(name, email, document, telephone, direction, birthday, sales) VALUES (:name, :email, :document, :telephone, :direction, :birthday, :sales)");
 
             $stmt -> bindParam(':name', $data['name'], PDO::PARAM_STR);
             $stmt -> bindParam(':email', $data['email'], PDO::PARAM_STR);
@@ -42,7 +42,7 @@ require_once("conexion.php");
             $stmt -> bindParam(':telephone', $data['telephone'], PDO::PARAM_STR);
             $stmt -> bindParam(':direction', $data['direction'], PDO::PARAM_STR);
             $stmt -> bindParam(':birthday', $data['birthday'], PDO::PARAM_STR);
-           
+            $stmt -> bindParam(':sales', $data['sales'], PDO::PARAM_INT);
 
             if($stmt->execute()) {return 'OK';}
             return 'ERROR';
@@ -58,7 +58,7 @@ require_once("conexion.php");
 
           static function MdlUpdateClient($table, $data) {
 
-            $stmt = Conexion::connect()->prepare("UPDATE $table SET name = :name, email = :email, document = :document, telephone = :telephone, direction = :direction, birthday = :birthday  WHERE id = :id");
+            $stmt = Conexion::connect()->prepare("UPDATE $table SET name = :name, email = :email, document = :document, telephone = :telephone, direction = :direction, birthday = :birthday, sales = :sales  WHERE id = :id");
 
             $stmt -> bindParam(':name', $data['name'], PDO::PARAM_STR);
             $stmt -> bindParam(':email', $data['email'], PDO::PARAM_STR);
@@ -66,6 +66,7 @@ require_once("conexion.php");
             $stmt -> bindParam(':telephone', $data['telephone'], PDO::PARAM_STR);
             $stmt -> bindParam(':direction', $data['direction'], PDO::PARAM_STR);
             $stmt -> bindParam(':birthday', $data['birthday'], PDO::PARAM_STR);
+            $stmt -> bindParam(':sales', $data['sales'], PDO::PARAM_INT);
             $stmt -> bindParam(':id', $data['id'], PDO::PARAM_STR);
 
             if($stmt->execute()) {return 'OK';}

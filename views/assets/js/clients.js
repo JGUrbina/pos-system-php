@@ -30,6 +30,7 @@ $('.btn-edit-client').click('.btn-edit-client', function () {
             $('#edit-telephone').val(json_response['telephone']);
             $('#edit-direction').val(json_response['direction']);
             json_response['birthday'] != '0000-00-00' && $('#edit-birthday').val(json_response['birthday']);
+            $('#edit-sales').val(json_response['sales']);
             $('#id_client').val(json_response['id']);
             
         }

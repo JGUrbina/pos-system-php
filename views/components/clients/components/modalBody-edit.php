@@ -71,6 +71,7 @@
                 <input type="text" class="form-control input-lg" name="edit-birthday" placeholder="Birthday"
                     id="edit-birthday" autocomplete="off" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask />
                 <input type="hidden" class="form-control input-lg" name="id-client" id="id-client" />
+                <input type="hidden" class="form-control input-lg" name="edit-sales" id="edit-sales" />
             </div>
         </div>
 
