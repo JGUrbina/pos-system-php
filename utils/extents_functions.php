@@ -35,7 +35,7 @@ function imgSave($img, $actual_img, $new_width, $new_height, $directory) {
         
         unlink(dirname(__DIR__, 1).'/'.$actual_img);
     } else {
-        mkdir($directory, 0755);
+        mkdir($directory, 0755, true);
     }
 
     

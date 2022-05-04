@@ -35,7 +35,7 @@ class ProductsController {
                $new_height = 500;
 
                $directory = 'views/assets/img/products/'.str_replace(" ", "", $_POST['name-product']).'-'.$_POST['code'];
-
+                var_dump('---> ', $directory);
                $img_directory = imgSave($img, '', $new_width, $new_height, $directory);
            }
 
