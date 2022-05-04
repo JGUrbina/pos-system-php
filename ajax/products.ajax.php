@@ -42,7 +42,7 @@ class ProductsAjax {
          
         $id = $this->delete_id;
         $img = $this->delete_img;
-        $response = ProductsController::userDeleteCtr($id, $img);
+        $response = ProductsController::productDeleteCtr($id, $img);
         
         return $response;
         
@@ -76,16 +76,6 @@ if(isset($_POST['delete_id'])) {
      $validate -> delete_id = $_POST['delete_id'];
      $validate -> delete_img = $_POST['img_product'];
      $response = $validate -> deleteProductAjax();
-
-     echo $response;
-     
- }
-
-if(isset($_POST['delete_id'])) {
-     
-     $validate = new ProductsAjax();
-     $validate -> delete_id = $_POST['delete_id'];
-     $response = $validate -> deleteCategoryAjax();
 
      echo $response;
      

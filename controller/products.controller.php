@@ -175,7 +175,7 @@ class ProductsController {
     *            Product delete
     * ======================================**/
 
-    static public function userDeleteCtr($item, $value_img) {
+    static public function productDeleteCtr($item, $value_img) {
         
         $table = 'products';
         //imgDelete($value_img, true);

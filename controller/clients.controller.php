@@ -34,7 +34,8 @@ class ClientsController {
                                 'telephone' => $telephone,
                                 'document' => $document,
                                 'direction' => $direction,
-                                'birthday' => $birthday
+                                'birthday' => $birthday,
+                                'sales' => 0
                                 
                               );
             $table = 'clients';
