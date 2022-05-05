@@ -34,21 +34,48 @@
                                         <label for="seller" class="input-group-addon">
                                             <i class="fa fa-user"></i>
                                         </label>
-                                        <input type="text" class="form-control" name="seller" value="User Admin"
-                                            id="seller" readonly />
+                                        <input type="text" class="form-control" name="seller"
+                                            value="<?php echo $_SESSION['name']?>" id="seller" readonly />
+                                        <input type="hidden" name="id-seller" value="<?php echo $_SESSION['id']?>"
+                                            id="id-seller" readonly />
                                     </div>
                                 </div>
-
                                 <!-- Code -->
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <label for="code" class="input-group-addon">
-                                            <i class="fa fa-barcode"></i>
-                                        </label>
-                                        <input type="text" class="form-control" name="code" value="1001" id="code"
-                                            readonly />
-                                    </div>
-                                </div>
+                                <?php
+                                    $item = null;
+                                    $value = null;
+
+                                    $sales = SalesController::showSalesCtr($item, $value);
+
+                                    if(!$sales) {
+                                        echo '
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <label for="code" class="input-group-addon">
+                                                        <i class="fa fa-barcode"></i>
+                                                    </label>
+                                                    <input type="text" class="form-control" name="code" value="1001" id="code"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        ';
+                                    } else {
+                                        $code = $sales[count($sales) - 1]['code'] + 1;
+                                        echo '
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <label for="code" class="input-group-addon">
+                                                        <i class="fa fa-barcode"></i>
+                                                    </label>
+                                                    <input type="text" class="form-control" name="code" value="'.$code.'" id="code"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        ';
+
+                                    }
+                                    
+                                ?>
 
                                 <!-- Client -->
                                 <div class="form-group">
@@ -72,52 +99,13 @@
 
                                 <!-- Product 1 -->
 
-                                <div class="form-group row newProduct">
-
-                                    <div class="col-xs-6" style="padding-right:0;">
-
-                                        <div class="input-group">
-                                            <span class="input-group-addon" style="padding-bottom: 0; padding-top: 0;">
-                                                <button type="button" class="btn btn-danger btn-xs">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            </span>
-
-                                            <input type="text" class="form-control" name="addProduct"
-                                                placeholder="Add Product" id="addProduct" required />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-xs-3" style="padding-right:0;">
-                                        <div class="input-group">
-                                            <label for="price" class="input-group-addon">
-                                                <i class="fa fa-sort-amount-asc"></i>
-                                            </label>
-
-                                            <input type="number" class="form-control" name="quantity" placeholder="0"
-                                                id="quantity" required min="1" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-xs-3">
-                                        <div class="input-group">
-                                            <input type="number" class="form-control" name="price" placeholder="0"
-                                                id="price" required min="1" readonly />
-                                            <label for="price" class="input-group-addon">
-                                                <i class="fa fa-dollar"></i>
-                                            </label>
-
-                                        </div>
-
-                                    </div>
+                                <div class="form-group row new-product">
 
                                 </div>
 
                                 <!-- Product 2 -->
 
-                                <div class="form-group row newProduct">
+                                <!-- <div class="form-group row newProduct">
 
                                     <div class="col-xs-6" style="padding-right:0;">
 
@@ -158,12 +146,12 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
 
                                 <!-- Product 3 -->
 
-                                <div class="form-group row newProduct">
+                                <!-- <div class="form-group row newProduct">
 
                                     <div class="col-xs-6" style="padding-right:0;">
 
@@ -204,7 +192,7 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
 
 

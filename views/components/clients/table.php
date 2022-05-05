@@ -18,7 +18,7 @@
             $value = null;
             $clients = ClientsController::clientsShowCtr($item, $value);
             
-
+            var_dump($clients[count($clients) - 1]['email']);
             foreach ($clients as $client) {
                 echo '
                         <tr>

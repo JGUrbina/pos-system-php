@@ -42,6 +42,7 @@ class UsersController {
                      
                         $_SESSION['log-in'] = 'OK';
                         $_SESSION['name'] = $response['name'];
+                        $_SESSION['id'] = $response['id'];
                         $_SESSION['username'] = $response['username'];
                         $_SESSION['rol'] = $response['rol'];
                         $_SESSION['perfil_img'] = $response['perfil_img'];
