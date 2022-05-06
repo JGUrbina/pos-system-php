@@ -43,7 +43,7 @@
                     <i class="fa fa-th"></i>
                 </label>
 
-                <select class="form-control input-lg" name="category" id="categoryProduct">
+                <select class="form-control input-lg" name="category" id="categoryProduct" required>
                     <option value="">Select Category</option>
                     <?php
                             //require_once '../controller/categories.controller.php';

@@ -23,7 +23,7 @@
                 <div class="box box-success">
 
                     <div class="box-header with-border"></div>
-                    <form action="">
+                    <form method="post" class="form-sales">
                         <div class="box-body">
 
                             <div class="box">
@@ -197,7 +197,7 @@
 
 
                                 <!-- Button for add product -->
-                                <button type="button" class="btn btn-default  hidden-lg">
+                                <button type="button" class="btn btn-default  hidden-lg btn-addProduct">
                                     Add Product
                                 </button>
 
@@ -217,8 +217,10 @@
                                                     <td style="width: 50%;">
                                                         <div class="input-group">
                                                             <input type="number" class="form-control input-lg" min="0"
-                                                                name="porcentaje" placeholder="0" id="porcentaje"
+                                                                name="porcentaje" placeholder="0" id="porcentaje-venta"
                                                                 autocomplete="off" required />
+                                                            <input type="hidden" name="tax" id="tax" />
+                                                            <input type="hidden" name="net" id="net" />
                                                             <label for="porcentaje" class="input-group-addon">
                                                                 <i class="fa fa-percent"></i>
                                                             </label>
@@ -227,9 +229,9 @@
 
                                                     <td style="width: 50%;">
                                                         <div class="input-group">
-                                                            <input type="number" class="form-control input-lg" min="0"
-                                                                name="total" placeholder="0" id="total"
-                                                                autocomplete="off" required />
+                                                            <input type="text" class="form-control input-lg"
+                                                                name="total" total placeholder="0" id="total"
+                                                                autocomplete="off" required readonly />
                                                             <label for="total" class="input-group-addon">
                                                                 <i class="fa fa-dollar"></i>
                                                             </label>
@@ -246,34 +248,24 @@
 
                                 <!-- Payment Method -->
                                 <div class="row">
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-6 hidden select_payment_method">
                                         <div class="form-group">
 
                                             <div class="input-group">
                                                 <label for="client" class="input-group-addon">
                                                     <i class="fa fa-money"></i>
                                                 </label>
-                                                <select class="form-control" name="client" id="client">
+                                                <select class="form-control" name="payment_method" id="payment_method">
                                                     <option value="">Select Payment Method</option>
-                                                    <option value="credit card">Credit Card</option>
-                                                    <option value="debit card">Debit Card</option>
+                                                    <option value="CC">Credit Card</option>
+                                                    <option value="DC">Debit Card</option>
                                                     <option value="cash">Cash</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" min="0" name="code-card"
-                                                    placeholder="0" id="code-card" autocomplete="off" required />
-                                                <label for="code-card" class="input-group-addon">
-                                                    <i class="fa fa-credit-card"></i>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="box-payment-method"></div>
                                 </div>
 
                                 <hr />

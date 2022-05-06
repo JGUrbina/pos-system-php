@@ -24,8 +24,13 @@ class TableProduct {
                     //Imagen del producto
                      $image = "<img src='". $products[$i]['image'] ."' width='30px'/>";
 
+                     if($products[$i]['stock'] == 0) {
+                         $buttom =  "<div class='btn btn-group'><button class='btn btn-default btn-xs recover-product' id-product='".$products[$i]['id']."' >Add</button></div>";
+                     } else {
+                         $buttom =  "<div class='btn btn-group'><button class='btn btn-primary btn-xs add-product recover-product' id-product='".$products[$i]['id']."' >Add</button></div>";
+                     }
                      //Botones del producto 
-                    $buttom =  "<div class='btn btn-group'><button class='btn btn-primary btn-xs add-product' id-product='".$products[$i]['id']."' >Add</button></div>";
+                   
                      //$buttoms = "<div class='btn btn-group' style='width: 100px;'><button class='btn btn-warning btn-xs btn-edit-product' data-toggle='modal' data-target='#modalEditProduct' id-product='".$products[$i]['id']."'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btn-xs delete-product' id-product='".$products[$i]['id']."' img-product='".$products[$i]['image']."'><i class='fa fa-times' ></i></button></di>";
                     
                      // Stock

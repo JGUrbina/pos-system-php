@@ -13,7 +13,7 @@ class ProductsController {
     static public function productRegisterCtr() {
         include 'utils/constants.php';
         include 'utils/extents_functions.php';
-        
+
         if(isset($_POST['name-product']))
            {
             
@@ -71,7 +71,7 @@ class ProductsController {
 
            
             
-           if($response === 'OK') { echo $product_register_success;  return;}
+          if($response === 'OK') { echo $product_register_success;  return;}
         } 
     }
 

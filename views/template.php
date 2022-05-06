@@ -83,6 +83,9 @@
     <script src="views/assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
     <script src="views/assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
+    <!-- jQueryNumber -->
+    <script src="views/assets/plugins/jqueryNumber/jqueryNumber.min.js"></script>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">

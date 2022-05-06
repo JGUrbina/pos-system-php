@@ -20,15 +20,33 @@ class ProductsAjax {
 
 
     public $id_product;
-
+    public $getAllProducts;
+    public $name_product;
   public function editProduct(){
 
-    $item = "id";
-    $value = $this->id_product;
-    
-    $response = ProductsController::productsShowCtr($item, $value);
+    if($this->getAllProducts == 'ok') {
+        $item = null;
+        $value = null;
+        
+        $response = ProductsController::productsShowCtr($item, $value);
 
-    echo json_encode($response);
+        echo json_encode($response);
+    } else if($this->name_product != ''){
+        $item = "name";
+        $value = $this->name_product;
+    
+        $response = ProductsController::productsShowCtr($item, $value);
+
+        echo json_encode($response);
+    }
+    else {
+        $item = "id";
+        $value = $this->id_product;
+    
+        $response = ProductsController::productsShowCtr($item, $value);
+
+        echo json_encode($response);
+    }
 
   }
 
@@ -80,3 +98,25 @@ if(isset($_POST['delete_id'])) {
      echo $response;
      
  }
+
+/**======================================
+ *           GET All Products
+ * ======================================**/
+ if(isset($_POST['getAllProducts'])) {
+    $getAllProducts = new ProductsAjax();
+     $getAllProducts -> getAllProducts = $_POST['getAllProducts'];
+
+     $response = $getAllProducts -> editProduct();
+
+     echo $response;
+ }
+/**======================================
+ *           GET  Product por name
+ * ======================================**/
+ if(isset($_POST['name_product'])) {
+     
+    $codeProduct = new ProductsAjax();
+    $codeProduct -> name_product = $_POST['name_product'];
+    $codeProduct ->editProduct();
+
+}
